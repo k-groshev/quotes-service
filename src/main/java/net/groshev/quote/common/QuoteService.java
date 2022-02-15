@@ -4,6 +4,10 @@ import com.github.javafaker.Faker;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+import java.util.List;
 
 @Component
 public class QuoteService {
@@ -30,5 +34,14 @@ public class QuoteService {
                 quote = faker.backToTheFuture().quote();
         }
         return quote;
+    }
+
+
+    public Mono<Quote> findOne(String id) {
+        return Mono.justOrEmpty(new Quote(getFakeQuote()));
+    }
+
+    public Flux<Quote> findAll() {
+        return Flux.just(new Quote(getFakeQuote()), new Quote(getFakeQuote()), new Quote(getFakeQuote()));
     }
 }
