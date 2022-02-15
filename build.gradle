@@ -12,6 +12,8 @@ plugins {
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
     id 'idea'
+    // release plugin
+    id 'net.researchgate.release' version '2.8.1'
 }
 
 group = 'net.groshev'
@@ -52,11 +54,13 @@ tasks.named('test') {
     useJUnitPlatform()
 }
 
-//release {
-//    git {
-//        requireBranch = 'main'
-//    }
-//}
+// release plugin configuration https://github.com/researchgate/gradle-release
+// for release use 'gradle release'
+release {
+    git {
+        requireBranch = 'main'
+    }
+}
 
 springBoot {
     buildInfo()

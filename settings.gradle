@@ -7,4 +7,11 @@
  * in the user manual at https://docs.gradle.org/7.4/userguide/multi_project_builds.html
  */
 
-rootProject.name = 'quote-service'
+
+pluginManagement {
+    repositories {
+        maven { url 'https://repo.spring.io/snapshot' }
+        gradlePluginPortal()
+    }
+}
+rootProject.name = 'quotes-service'
