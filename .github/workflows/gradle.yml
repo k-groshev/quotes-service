@@ -6,6 +6,8 @@ name: Java CI with Gradle
 on:
   push:
     branches: [ main ]
+    tags:
+      - '*'
   pull_request:
     branches: [ main ]
 
@@ -25,3 +27,18 @@ jobs:
         run: chmod +x gradlew
       - name: Build with Gradle
         run: ./gradlew build
+
+      - name: Get last release version
+        id: vars
+        run: echo ::set-output name=tag::$(echo ${GITHUB_REF:10})
+
+      - name: Build DockerImage and push it to GitHub Packages if it was released
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: docker.pkg.github.com
+          repository: ${{ github.repository }}/quotes-service
+          tags: ${{steps.vars.outputs.tag}}, latest
+          add_git_labels: true
