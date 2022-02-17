@@ -51,5 +51,6 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/quotes-service:${{steps.vars.outputs.tag}}, ${{ secrets.DOCKERHUB_USERNAME }}/quotes-service:latest
+          #tags: ${{ secrets.DOCKERHUB_USERNAME }}/quotes-service:${{steps.vars.outputs.tag}}, ${{ secrets.DOCKERHUB_USERNAME }}/quotes-service:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/quotes-service:latest
           add_git_labels: true
