@@ -31,7 +31,7 @@ All notable changes to this project will be documented in this file.
 - [+] add github actions ecosystem to dependabot
 - [Gradle Release Plugin] - new version commit:  '0.0.2-SNAPSHOT'.
 
-### 
+###
 
 dependency-type: direct:production
 
@@ -55,7 +55,7 @@ update-type: version-update:semver-major
 - [+] fix up gitignore
 - [+] init classic rest endpoint
 
-### 
+###
 
 dependency-type: direct:production
 
