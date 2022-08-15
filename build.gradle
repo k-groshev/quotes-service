@@ -58,7 +58,7 @@ tasks.named('test') {
 // for release use 'gradle release'
 release {
     git {
-        кequireBranch.set('main')
+        requireBranch.set('main')
     }
 }
 
