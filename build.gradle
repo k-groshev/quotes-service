@@ -13,7 +13,7 @@ plugins {
     id 'java'
     id 'idea'
     // release plugin
-    id 'net.researchgate.release' version '3.0.0'
+    id 'net.researchgate.release' version '3.0.2'
 }
 
 group = 'net.groshev'
