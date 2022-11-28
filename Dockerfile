@@ -1,10 +1,10 @@
-FROM adoptopenjdk/openjdk14:alpine-jre as builder
+FROM eclipse-temurin:17-jre-alpine as builder
 WORKDIR application
 ARG JAR_FILE=build/libs/*.jar
 COPY ${JAR_FILE} application.jar
 RUN unzip application.jar
 
-FROM adoptopenjdk/openjdk14:alpine-jre
+FROM eclipse-temurin:17-jre-alpine
 RUN addgroup -S spring && adduser -S spring -G spring
 USER spring:spring
 

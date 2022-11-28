@@ -17,7 +17,7 @@ plugins {
 }
 
 group = 'net.groshev'
-sourceCompatibility = '14'
+sourceCompatibility = '17'
 
 repositories {
     // Use Maven Central for resolving dependencies.
@@ -38,7 +38,6 @@ dependencies {
     implementation 'com.google.guava:guava:31.1-jre'
 
     implementation('com.fasterxml.jackson.core:jackson-databind')
-    implementation('javax.validation:validation-api')
     implementation('org.apache.commons:commons-lang3')
 
 
@@ -67,7 +66,7 @@ springBoot {
 }
 
 ext {
-    set('springCloudVersion', "Hoxton.SR9")
+    set('springCloudVersion', "2021.0.5")
     set('equalsVerifierVersion', '3.3')
 }
 
