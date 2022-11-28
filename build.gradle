@@ -17,7 +17,7 @@ plugins {
 }
 
 group = 'net.groshev'
-sourceCompatibility = '14'
+sourceCompatibility = '17'
 
 repositories {
     // Use Maven Central for resolving dependencies.
