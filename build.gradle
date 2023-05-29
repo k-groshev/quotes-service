@@ -35,7 +35,7 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
 
     // This dependency is used by the application.
-    implementation 'com.google.guava:guava:31.1-jre'
+    implementation 'com.google.guava:guava:32.0.0-jre'
 
     implementation('com.fasterxml.jackson.core:jackson-databind')
     implementation('org.apache.commons:commons-lang3')
