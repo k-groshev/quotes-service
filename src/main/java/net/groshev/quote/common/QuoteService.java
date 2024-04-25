@@ -21,19 +21,11 @@ public class QuoteService {
     }
 
     public String getFakeQuote() {
-        final String quote;
-
         switch (quoteConfig.toUpperCase()) {
-            case "CHUCK":
-                quote = faker.chuckNorris().fact();
-                break;
-            case "HOBBIT":
-                quote = faker.hobbit().quote();
-                break;
-            default:
-                quote = faker.backToTheFuture().quote();
+            case "CHUCK" -> faker.chuckNorris().fact();
+            case "HOBBIT"-> faker.hobbit().quote();
         }
-        return quote;
+        return faker.backToTheFuture().quote();
     }
 
 
