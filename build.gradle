@@ -16,8 +16,11 @@ plugins {
     id 'net.researchgate.release' version '3.1.0'
 }
 
-group = 'net.groshev'
-sourceCompatibility = '17'
+
+java {
+    group = 'net.groshev'
+    sourceCompatibility = JavaVersion.VERSION_17
+}
 
 repositories {
     // Use Maven Central for resolving dependencies.
